@@ -1,0 +1,1055 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,target-densitydpi=medium-dpi">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta http-equiv="Cache" content="no-cache">
+	<meta property="qc:admins" content="10230705766076725121676375" />
+
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script src="js/react.js"></script>
+<script src="js/JSXTransformer.js"></script>
+
+
+<title>烘焙帮</title>
+
+
+<style type="text/css">
+html,
+body {
+	margin: 0px;
+	border: none;
+	outline: none;
+	text-decoration: none;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 0;
+	text-decoration: none;
+	list-style: none;
+	background: transparent;
+	font-weight: 400;
+	font-family: "Helvetica Neue",Helvetica,STHeiTi,sans-serif;
+	-webkit-touch-callout: none;
+	-webkit-highlight: none;
+	-webkit-appearance: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+body{background:#fff8f4}
+#body {
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+fieldset,img{border:0;}
+a{text-decoration:none;outline:none;}
+a:hover{text-decoration:none;}
+li{list-style:none;}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
+    color:    #FFF;
+	filter:alpha(opacity=80);
+	-moz-opacity:0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+}
+input:-moz-placeholder, textarea:-moz-placeholder { 
+    color:    #FFF;
+	filter:alpha(opacity=80);
+	-moz-opacity:0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+}
+input::-moz-placeholder, textarea::-moz-placeholder { 
+    color:    #FFF;
+	filter:alpha(opacity=80);
+	-moz-opacity:0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder { 
+    color:    #FFF;
+	filter:alpha(opacity=80);
+	-moz-opacity:0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+}
+
+
+.dropmenu {
+	display: none;
+}
+.dropmenu.active {
+	display: block;
+}
+
+.menu {
+	background-image:url(http://bakewebstatic.qiniudn.com/mobile/widgets/menu/header/menu_71e20a5.png);
+}
+.menu.active {
+	background-image:url(http://7xavxu.com2.z0.glb.clouddn.com/mobile/widgets/menu/header/close_706adbe.png);
+}
+
+.home span {
+	background-image:url(http://static.hongbeibang.com/mobile/widgets/menu/header/home_b702568.png);
+}
+
+.classify span {
+	background-image:url(http://7xavxu.com2.z0.glb.qiniucdn.com/mobile/widgets/menu/header/classify_3dd07cd.png);
+}
+
+.weixin span {
+	background-image:url(http://bakewebstatic.qiniudn.com/mobile/widgets/menu/header/weixin_56ad310.png);
+}
+
+.save {
+	background-image:url(http://7xavxu.com2.z0.glb.qiniucdn.com/mobile/widgets/content/footerButton/save_ae6ab4b.png);
+}
+
+.share {
+	background-image:url(http://7xavxu.com2.z0.glb.qiniucdn.com/mobile/widgets/content/footerButton/share_5256e29.png);
+}
+
+.del {
+	background-image:url(http://7xavxu.com2.z0.glb.qiniucdn.com/mobile/widgets/content/footerButton/del_e926906.png);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="body">
+</div>
+
+
+<script type="text/jsx">
+
+/*****************************************/
+
+/* 
+**Header_li
+*/
+var Header_LI = React.createClass({
+		
+	homePage: function () {
+		location.href='http://www.hongbeibang.com/';
+	},
+	classify: function () {
+		location.href='http://www.hongbeibang.com/classify';
+	},
+	weixin: function () {
+		location.href='http://mp.weixin.qq.com/s?__biz=MjM5MjgyMDE5MQ==&mid=203903555&idx=1&sn=d4f360c222578801c14f5e1a5ccf911f#wechat_redirect';
+	},
+	
+  	render: function() {
+		
+		var dropmenuLi = {
+			paddingLeft:'15px',
+			paddingRight:'15px',
+			height:'40px'
+		};
+		
+		var dropmenuSpan = {
+			display:'block',
+			fontSize:'14px',
+			color:'#fff',
+			textAlign:'left',
+			paddingLeft:'30px',
+			lineHeight:'40px',
+			backgroundPosition:'left center',
+			backgroundRepeat:'no-repeat',
+			backgroundSize:'20px 20px',
+			cursor:'pointer'
+		};
+		
+		var headerClass_li = this.props.headerClass_li;
+		var headerPage_title = this.props.headerPage_title;
+		
+		var HeaderClick_li = 
+		headerClass_li== 'home' ?
+			this.homePage :
+		headerClass_li== 'classify' ?
+			this.classify : this.weixin;
+		
+    	return (
+			<li style={dropmenuLi} className={headerClass_li} onClick={HeaderClick_li}><span style={dropmenuSpan}>{headerPage_title}</span></li> 
+		);
+	}
+});
+
+
+/* 
+**Header_ul dropmenu
+*/
+var HeaderUL_menu = React.createClass({
+	
+  	render: function() {
+		
+		var dropmenu = {
+			float:'right',
+			marginRight:'15px',
+			width:'150px',
+			background:'#f27373',
+			overflow:'hidden',
+			zoom:'1',
+			cursor:'pointer'
+		};
+		
+        var headerli_menurows = this.props.headerli.map(function(headerli) {
+        	return <Header_LI headerClass_li={headerli.headerClass_li} headerPage_title={headerli.headerPage_title}  key={headerli.headerPage_title} />;
+        });
+		
+    	return (
+		  	<ul className='dropmenu' style={dropmenu}>
+				{headerli_menurows}
+			</ul>
+		);
+	}
+});
+
+/* 
+**Header_ul rightButton
+*/
+var menuclick = true;
+
+var HeaderUL_right = React.createClass({
+	
+	getInitialState: function() {
+    	return {
+			menuclick: true
+		};
+  	},
+	
+  	componentDidMount: function() {
+		
+		$(React.findDOMNode(this.refs.rightButton)).click(function(){
+			if (menuclick) {
+				$(".menu").addClass("active");
+				$(".dropmenu").addClass("active");
+				menuclick = !menuclick;
+			}else {
+				$(".menu").removeClass("active");
+				$(".dropmenu").removeClass("active");
+				menuclick = !menuclick;
+			}
+		})
+		
+		React.findDOMNode(this.refs.rightButton).onselectstart = function(){
+			return false;
+		}
+  	},
+	
+  	render: function() {
+		
+		var rightButton = {
+			position: 'absolute',
+			top:'0',
+			right:'0',
+			bottom:'0',
+			margin:'auto 0',
+			cursor:'pointer'
+		};
+		
+		var rightButtonLi = {
+			height: '45px',
+			width:'23px',
+			paddingLeft:'15px',
+			paddingRight:'15px',
+			backgroundPosition:'center center',
+			backgroundRepeat:'no-repeat',
+			backgroundSize:'23px 23px'
+		};
+		
+    	return (
+		  	<ul style={rightButton} ref='rightButton'>
+				<li className='menu' style={rightButtonLi}></li>
+			</ul>
+		);
+	}
+});
+
+/* 
+**Header_ul leftButton
+*/
+
+var HeaderUL_left = React.createClass({
+	
+  	render: function() {
+		
+		var leftButton = {
+			position: 'absolute',
+			top:'0',
+			left:'0',
+			bottom:'0',
+			margin:'auto 0',
+			cursor:'pointer'
+		};
+		
+		var leftButtonLi = {
+			height: '45px',
+			width:'23px',
+			paddingLeft:'15px',
+			paddingRight:'15px',
+			backgroundPosition:'center center',
+			backgroundRepeat:'no-repeat',
+			backgroundSize:'23px 23px',
+			backgroundImage:'url(http://7xavxu.com2.z0.glb.qiniucdn.com/mobile/widgets/menu/header/back_053ee7b.png)'
+		};
+		
+    	return (
+		  	<ul style={leftButton}>
+				<li style={leftButtonLi}></li>
+			</ul>
+		);
+	}
+});
+
+/*
+** Header
+*/
+var Header = React.createClass({
+	
+  	render: function() {
+		
+		var headerButton = {
+			position: 'fixed',
+			top:'0',
+			left:'0',
+			right:'0',
+			margin:'0 auto',
+			maxWidth: '600px',
+			zIndex:'4'
+		};
+		
+		var headerTitle = {
+			background: '#f27373',
+			fontSize:'18px',
+			color:'#fff',
+			textAlign:'center',
+			height:'45px',
+			lineHeight: '45px'
+		};
+		
+		var headerButton_padding = {
+			height:'45px'
+		};
+		
+		var headerli = [
+			{headerClass_li: 'home', headerPage_title: '首页' },
+			{headerClass_li: 'classify', headerPage_title: '食谱分类' },
+			{headerClass_li: 'weixin', headerPage_title: '关注微信' }
+		];
+		
+    	return (
+		  	<div>
+		  		<div style={headerButton}>
+					<div style={headerTitle}>烘焙帮</div>
+					<HeaderUL_left />
+					<HeaderUL_right />
+		  			<HeaderUL_menu headerli={headerli} />
+				</div>
+				<div style={headerButton_padding}></div>
+			</div>
+		);
+	}
+});
+
+/*****************************************/
+
+/* 
+**Footer_UL
+*/
+var Footer_UL = React.createClass({
+	
+  	render: function() {
+		
+		var footerLiStyle = {
+			width:'33.333333333333336%',
+			height:'100%',
+			position:'relative',
+			textAlign:'center',
+			float:'left',
+			cursor:'pointer'
+		};
+		
+		var footerStyleSpan = {
+			display:'inline-block',
+			height:'45px',
+			lineHeight:'45px',
+			backgroundPosition:'left center',
+			backgroundSize:'23px 23px',
+			backgroundRepeat:'no-repeat',
+			fontSize:'18px',
+			textAlign:'right',
+			color:'#fff',
+			paddingLeft:'40px'
+		};
+		
+		var footerLi_class = this.props.footerLi_class;
+		var footerLi_title = this.props.footerLi_title;
+		
+    	return (
+		  	<li style={footerLiStyle}>
+		  		<span style={footerStyleSpan} className={footerLi_class}>{footerLi_title}</span>
+			</li>
+		);
+	}
+});
+
+/* 
+**Footer
+*/
+var Footer = React.createClass({
+	
+  	render: function() {
+		
+		var footerButton_padding = {
+			paddingBottom:'45px'
+		};
+		
+		var footerButtonStyle = {
+			height:'45px',
+			background:'#f27373',
+			zIndex:'3',
+			position:'fixed',
+			bottom:'0',
+			left:'0',
+			right:'0',
+			margin:'0 auto',
+			maxWidth:'600px',
+		};
+		
+		var body_footer = {
+			paddingBottom:'12px'
+		};
+		
+		var footerLi = [
+			{footerLi_class: 'save', footerLi_title: '保存' },
+			{footerLi_class: 'share', footerLi_title: '发布' },
+			{footerLi_class: 'del', footerLi_title: '删除' }
+		];
+		
+		var footerLiRows = footerLi.map(function(footerLi) {
+			return <Footer_UL footerLi_class={footerLi.footerLi_class} footerLi_title={footerLi.footerLi_title} key={footerLi.footerLi_title} />
+		});
+		
+    	return (
+		  	<div>
+		  		<div style={footerButton_padding}></div>
+				<ul style={footerButtonStyle}>
+					{footerLiRows}
+				</ul>
+				<div style={body_footer}></div>
+			</div>
+		);
+	}
+});
+
+/*****************************************/
+
+/* 
+**Content1 coverImage
+*/
+var ConCoverImage = React.createClass({
+	
+	getInitialState: function () {
+		return {
+			imgURL: '',
+			//imgURL: this.props.haveImgData,
+			imgBackground: 0
+		};
+	},
+	
+	onchangeCover: function(event) {
+
+		var fileAddress = event.target.files[0].name;
+		this.props.imgStepData(fileAddress);
+
+		this.setState({
+			imgURL: fileAddress
+		});
+	},
+	
+	loadingStart: function() {
+		this.loading = setInterval(this.onloadingtime,400);
+	},
+	
+	onloadingtime: function() {
+		if( this.state.imgBackground == 100 || this.state.imgBackground > 100){
+			clearInterval(this.loading);
+			this.setState({
+				imgBackground: 0
+			});
+		}else{
+			this.setState({
+				imgBackground: this.state.imgBackground + 10
+			});
+		}
+	},
+
+	componentWillReceiveProps: function(nextProps) {
+		this.setState({
+			imgURL: nextProps.haveImgData
+		});
+	},
+	
+  	render: function() {
+		
+		var coverImageCss = {
+			width: this.props.widthChange,
+			position: 'relative',
+			marginTop: '12px',
+			marginLeft: '10px',
+			marginRight: '10px',
+			overflow: 'hidden',
+			zoom: '1'
+		};
+		
+		var coverImageTip = {
+			width: '100%',
+			height: '0',
+			paddingBottom: '66%',
+			backgroundColor: '#f5efe1',
+			backgroundImage: 'url(http://bakewebstatic.qiniudn.com/mobile/widgets/common/imageInput/camera_73d26b7.png)',
+			backgroundSize: '50px 50px',
+			backgroundRepeat: 'no-repeat',
+			backgroundPosition: 'center center'
+		};
+		
+		var coverImageInput = {
+			opacity: '0',
+			display: 'block',
+			position: 'absolute',
+			top: '0',
+			bottom: '0',
+			left: '0',
+			right: '0',
+			width: '100%',
+			height: '100%'
+		};
+		
+		var coverBackground = {
+			background: 'rgba(0, 0, 0, 0.5)',
+			width: '100%',
+			height: '100%',
+			position: 'absolute'
+		};
+		
+		var loadingtext = {
+			position: 'relative',
+			top: '50%',
+			marginTop: '-12px',
+			fontSize: '20px',
+			textAlign: 'center',
+			color: 'black'
+		};
+		
+		var coverImageImg = {
+			width: '100%'
+		};
+		
+		if(this.state.imgURL != '') {
+			if(this.state.imgBackground != 0) {
+				var imgbackground = <div style={coverBackground}><div style={loadingtext}>{this.state.imgBackground + '%'}</div></div>;
+
+			}else {
+				var imgbackground = null;
+			};
+
+			var divBackground = null;
+
+			var coverImgshow = <img style={coverImageImg} src={'img/'+this.state.imgURL} />;
+			
+		}else {
+			var divBackground = <div style={coverImageTip}></div>;
+			var imgbackground = null;
+			var coverImgshow = null;
+		}
+		
+    	return (
+		  	<div>
+		  		<div style={coverImageCss}>
+					{divBackground}
+					{imgbackground}
+					{coverImgshow}
+					<span></span>
+					<input type='file' name='data' accept='image/*' onChange={this.onchangeCover} onClick={this.loadingStart} style={coverImageInput} ref="file"/>
+				</div>
+			</div>
+		);
+	}
+});
+
+/*****************************************/
+
+/* 
+**Title
+*/
+var EditTitle = React.createClass({
+	
+  	render: function() {
+		
+		var headerTitleCss = {
+			marginTop: '12px',
+			marginLeft: '10px',
+			marginRight: '10px',
+			overflow: 'hidden',
+			zoom: '1'
+		};
+		
+		var headerTitleIcon = {
+			display: 'block',
+			width: '7px',
+			height: '18px',
+			background: '#f27373',
+			borderRadius: '3px',
+			float: 'left'
+		};
+		
+		var headerTitleText = {
+			paddingLeft: '7px',
+			fontSize: '16px',
+			lineHeight: '18px',
+			color: '#595959',
+			overflow: 'hidden',
+			zoom: '1'
+		};
+		
+    	return (
+		  	<div>
+		  		<div style={headerTitleCss}>
+					<span style={headerTitleIcon}></span>
+					<h1 style={headerTitleText}>{this.props.titleText}</h1>
+				</div>
+			</div>
+		);
+	}
+});
+
+/*****************************************/
+
+/* 
+**Content2 TextInput_Dialog
+*/
+var TextInput_Dialog = React.createClass({
+	
+	getInitialState: function () {
+		return {
+			thisvalue: this.props.onReturnValue
+		};
+	},
+	
+	handleCancleClick: function() {
+		this.props.onCancelClick();
+	},
+	
+	onvalueChange: function(event) {
+		this.setState({
+			thisvalue: event.target.value,
+		});
+	},
+
+	submitValue: function() {
+		//alert(this.state.thisvalue);
+
+		if(this.state.thisvalue != ''){
+			this.props.onSaveValue(this.state.thisvalue);
+		}else{
+			this.props.onSaveValue(this.props.tipsText);
+		}
+		this.props.onCancelClick();
+	},
+	
+  	render: function() {
+			
+		var textInput_DialogCss = {
+			width: '100%',
+			height: '100%',
+			zIndex: '9',
+			position: 'absolute',
+			top: '0',
+			bottom: '0',
+			left: '0',
+			right: '0',
+			margin: 'auto'
+		};
+		
+		var textInput_Background = {
+			position: 'fixed',
+			top: '0',
+			bottom: '0',
+			left: '0',
+			right: '0',
+			zIndex: '7',
+			background: '#fff8f4'
+		};
+		
+		var headerDialog = {
+			width: '100%',
+			height: '50px',
+			position: 'absolute',
+			top: '0',
+			left: '0',
+			right: '0',
+			margin: '0 auto',
+			background: '#fff8f4'
+		};
+		
+		var centerText = {
+			top: '50px',
+			background: '#fff',
+			padding: '15px',
+			height: '100%',
+			margin: '0',
+			position: 'absolute',
+			bottom: '0',
+			left: '0',
+			right: '0'
+		};
+		
+		var headerDialog_cancel = {
+			marginLeft: '15px',
+			float: 'left',
+			height: '100%',
+			lineHeight: '50px',
+			fontSize: '18px',
+			color: '#f27373',
+			cursor: 'pointer'
+		};
+		
+		var headerDialog_confirm = {
+			marginRight: '15px',
+			float: 'right',
+			height: '100%',
+			lineHeight: '50px',
+			fontSize: '18px',
+			color: '#f27373',
+			cursor: 'pointer'
+		};
+		
+		var headerDialog_title = {
+			textAlign: 'center',
+			height: '100%',
+			lineHeight: '50px',
+			fontSize: '18px',
+			color: '#f27373'
+		};
+		
+		var centerText_textarea = {
+			width: '100%',
+			height: '100%',
+			fontSize: '16px',
+			color: '#595959'
+		};
+		
+		return (
+			<div>
+				<div style={textInput_DialogCss}>
+					
+						<div style={headerDialog}>
+							<button style={headerDialog_cancel} onClick={this.handleCancleClick}>取消</button>
+							<button style={headerDialog_confirm} onClick={this.submitValue} >确认</button>
+							<h1 style={headerDialog_title}>{this.props.titleText}</h1>
+						</div>
+						<div style={centerText}>
+							<textarea ref='focusthis' style={centerText_textarea} autoFocus="ture" onChange={this.onvalueChange} value={this.state.thisvalue} />
+						</div>
+					
+				</div>
+				<div style={textInput_Background}></div>
+			</div>
+		);
+	}
+});
+
+/* 
+**Content2 AddTitleDesTips
+*/
+
+
+var AddTitleDesTips = React.createClass({
+	
+	getInitialState: function () {
+		return {
+			editclick: false,
+			//newTips: this.props.haveTextData
+			newTips: ''
+		};
+	},
+
+	onhandleEditClick: function() {
+		this.setState({
+			editclick: true
+		});
+	},
+	
+	onhandleEditCancelClick: function() {
+		this.setState({
+			editclick: false
+		});
+	},
+
+	onvalueSaveYes: function(newValue) {
+		this.props.textStepData(newValue);
+
+		this.setState({
+			newTips: newValue
+		});
+	},
+
+	componentWillReceiveProps: function(nextProps) {
+		this.setState({
+			newTips: nextProps.haveTextData
+		});
+	},
+	
+  	render: function() {	
+
+		if (this.state.editclick) {
+			var titleDesTipsIcon_EditPage = <TextInput_Dialog onCancelClick={this.onhandleEditCancelClick} onSaveValue={this.onvalueSaveYes} onReturnValue={this.state.newTips} titleText={this.props.titleText} tipsText={this.props.tipsText} />;
+		}else{
+			var titleDesTipsIcon_EditPage = null;
+		}
+
+		var titleDesTipsCss = {
+			marginTop: '12px',
+			marginLeft: '18px',
+			marginRight: '18px',
+			overflow: 'hidden',
+			zoom: '1'
+		};
+		
+		var titleDesTipsIcon = {
+			marginTop: '2px',
+			marginRight: '10px',
+			display: 'block',
+			width: '16px',
+			height: '16px',
+			backgroundImage: 'url(http://static.hongbeibang.com/mobile/widgets/recipe/textInput/add_cc154ac.png)',
+			backgroundSize: '16px 16px',
+			backgroundPosition: 'center',
+			backgroundRepeat: 'no-repeat',
+			borderRadius: '50%',
+			float: 'left'
+		};
+		
+		var titleDesTips_tip = {
+			color: '#8d8d8d',
+			display: 'block',
+			fontSize: '16px',
+			lineHeight: '25px',
+			overflow: 'hidden',
+			zoom: '1'
+		};
+
+		if(this.state.newTips != ''){
+			var showTips = <span style={titleDesTips_tip}>{this.state.newTips}</span>
+		}else{
+			var showTips = <span style={titleDesTips_tip}>{this.props.tipsText}</span>
+		}
+
+    	return (
+		  	<div>
+		  		<div>
+					<div style={titleDesTipsCss} onClick={this.onhandleEditClick}>
+						<div>
+							<span style={titleDesTipsIcon}></span>
+							{showTips}
+						</div>
+					</div>
+				</div>
+				
+				{titleDesTipsIcon_EditPage}
+			</div>
+		);
+	}
+});
+
+/*****************************************/
+
+/* 
+**Step_LI
+*/
+var StepAddLI = React.createClass({
+
+	onSetImgData: function(imgDataputin) {
+		this.props.setStepDataimg(this.props.stepNum,imgDataputin);
+	},
+
+	onSetTextData: function(textDataputin) {
+		this.props.setStepDatatext(this.props.stepNum,textDataputin);
+	},
+
+	onDelStep: function(){
+		this.props.delStepData(this.props.stepNum);
+	},
+	
+  	render: function() {
+		
+		var stepLiStyle = {
+			overflow: 'hidden',
+			zoom: '1'
+		};
+		
+		var spanOrder = {
+			marginTop: '12px',
+			marginLeft: '18px',
+			fontSize: '16px',
+			color: '#595959',
+			float: 'left'
+		};
+		
+		var spanDelStep = {
+			width: '62px',
+			height: '68px',
+			background:'url(http://bakeweb.qiniudn.com/FtXhz3faUQcVQkMRwo5QCwx9TOX4)',
+			backgroundSize: '16px 16px',
+			backgroundPosition: '34px 12px',
+			backgroundRepeat: 'no-repeat',
+			float: 'right'
+		};
+
+    	return (
+	  		<li style={stepLiStyle}>
+	  			<span style={spanOrder}>{this.props.stepNum}</span>
+	  			<span style={spanDelStep} onClick={this.onDelStep}></span>
+	  			<div style={stepLiStyle}>
+	  				<ConCoverImage widthChange={'50%'} imgStepData={this.onSetImgData} haveImgData={this.props.imgData} />
+	  				<AddTitleDesTips tipsText={'请输入步骤'} titleText={'步骤'} textStepData=
+			  			{this.onSetTextData} haveTextData={this.props.textData} />
+	  			</div>
+	  		</li>
+		);
+	}
+});
+
+/* 
+**Step
+*/
+var StepAdd = React.createClass({
+
+	getInitialState: function(){
+		return {
+			add_step: [{imgData:'',textData:''}],
+		};
+	},
+
+	onSetstepImgData: function(imgNum,stepDataImgExist) {
+		this.state.add_step[imgNum-1].imgData=stepDataImgExist;
+		
+		var textExist = this.state.add_step[imgNum-1].textData;
+
+		if(stepDataImgExist && !textExist){
+			this.state.add_step.push({imgData:'',textData:''});
+			this.setState ();
+		}
+	},
+
+	onSetstepTextData: function(textNum,stepDataTextExist) {
+
+		this.state.add_step[textNum-1].textData=stepDataTextExist;
+		
+		var imgExist = this.state.add_step[textNum-1].imgData;
+		
+		if(stepDataTextExist && !imgExist){
+			this.state.add_step.push({imgData:'',textData:''});
+			this.setState ();
+		}
+	},
+
+	onPutoutStep: function(thisDelNum) {
+		
+		
+		if(thisDelNum != this.state.add_step.length){
+			this.state.add_step.splice(thisDelNum-1,1);
+			
+			this.setState ({
+				add_step: this.state.add_step
+			});
+		};
+	},
+	
+  	render: function() {
+		
+		var stepUlStyle = {
+			overflow: 'hidden',
+			zoom: '1'
+		};
+
+		var allStep = [];
+        for( var s = 0 ; s != this.state.add_step.length ; ++s ){
+            allStep.push(
+                <StepAddLI setStepDataimg={this.onSetstepImgData} setStepDatatext={this.onSetstepTextData} delStepData={this.onPutoutStep} stepNum={s+1} textData={this.state.add_step[s].textData} imgData={this.state.add_step[s].imgData} />
+            );
+        }
+
+    	return (
+		  	<div>
+			  	<ul style={stepUlStyle}>
+			  		<span>
+			  			{allStep}
+			  		</span>
+				</ul>
+			</div>
+		);
+	}
+});
+
+/*****************************************/
+
+/* 
+**body
+*/
+var Bodypage = React.createClass({
+	
+  	render: function() {
+		
+    	return (
+		  	<div>
+		  		<Header />
+				<ConCoverImage imgStepData={function(){}} haveImgData={null} />
+				<EditTitle titleText={'标题'} />
+				<AddTitleDesTips tipsText={'添加标题'} titleText={'标题'} textStepData=
+			  			{function(){}} haveTextData={null} />
+				<EditTitle titleText={'介绍'} />
+				<AddTitleDesTips tipsText={'添加介绍'} titleText={'介绍'} textStepData=
+			  			{function(){}} haveTextData={null} />
+				<EditTitle titleText={'材料'} />
+				<AddTitleDesTips tipsText={'添加材料'} titleText={'材料'} textStepData=
+			  			{function(){}} haveTextData={null} />
+				<EditTitle titleText={'步骤'} />
+				<StepAdd />
+				<EditTitle titleText={'提示'} />
+				<AddTitleDesTips tipsText={'添加提示'} titleText={'提示'} textStepData=
+			  			{function(){}} haveTextData={null} />
+				<Footer />
+			</div>
+		);
+	}
+});
+
+React.render(
+  <Bodypage />,
+  document.getElementById('body')
+);
+
+
+</script>
+
+</body>
+</html>
